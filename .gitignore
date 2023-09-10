@@ -1,5 +1,7 @@
-build
 /node_modules
+# Ignore artifacts:
+build
+coverage
 # IDEs and editors
 /.idea
 .project
