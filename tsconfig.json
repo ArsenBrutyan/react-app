@@ -14,7 +14,8 @@
         "noEmit": true,
         "baseUrl": "./src",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["src/*"],
+            "@/store/*": ["store/*"]
         },
         "jsx": "react",
         "types": ["node"]
