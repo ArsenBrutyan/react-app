@@ -7,9 +7,7 @@ export const initEpics: Epic[] = [
         action$.pipe(
             ofType(actionsTypes.INITIALIZE),
             take(1),
-            mergeMap(({ payload }) => {
-                console.log('initialize');
-                console.log(payload);
+            mergeMap(() => {
                 return of();
             }),
         ),
