@@ -5,7 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import Dotenv from 'dotenv-webpack';
 
 const mainEntries: Record<string, string> = {
-    app: path.resolve(__dirname, 'src/pages/app.tsx'),
+    app: path.resolve(__dirname, 'src/index.tsx'),
 };
 
 const commonConfig = {
@@ -62,7 +62,6 @@ const commonConfig = {
         new Dotenv(),
         new HtmlWebpackPlugin({
             inject: true,
-            filename: `app.html`,
             chunks: ['app'],
             template: 'src/index.html',
         }),

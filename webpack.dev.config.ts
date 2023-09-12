@@ -45,14 +45,14 @@ const config: IConfiguration = {
         historyApiFallback: {
             rewrites: [
                 {
-                    from: /^\/app\/([^\/\?]*)[\/]?$/,
-                    to: '/app.html',
+                    from: /^\/[A-Za-z0-9_-]+$/,
+                    to: '/',
                 },
             ],
         },
         allowedHosts: ['localhost'],
         port: 3000,
-        open: ['/app.html'],
+        open: ['/home'],
         hot: true,
     },
 };
