@@ -60,6 +60,7 @@ const commonConfig = {
     },
     plugins: [
         new Dotenv(),
+        new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             inject: true,
             chunks: ['app'],
