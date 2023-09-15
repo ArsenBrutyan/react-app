@@ -39,6 +39,24 @@ const commonConfig = {
                 {
                     loader: 'postcss-loader',
                 },
+                {
+                    loader: 'image-webpack-loader',
+                    options: {
+                        mozjpeg: {
+                            progressive: true,
+                            quality: 65,
+                        },
+                        optipng: {
+                            enabled: false,
+                        },
+                        gifsicle: {
+                            interlaced: false,
+                        },
+                        webp: {
+                            quality: 75,
+                        },
+                    },
+                },
             ],
         },
         {

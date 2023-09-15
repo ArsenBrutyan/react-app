@@ -1,6 +1,8 @@
-import { UserListContent } from 'components/content/UserList';
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
+import { Preloader } from 'components/common/Preloader';
+
+const UserListContent = lazy(async () => import('components/content/UserList'));
 
 const UserList: React.FC = () => {
     return (
@@ -9,7 +11,9 @@ const UserList: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 2 }}>
-            <UserListContent />
+            <Suspense fallback={<Preloader />}>
+                <UserListContent />
+            </Suspense>
         </motion.div>
     );
 };

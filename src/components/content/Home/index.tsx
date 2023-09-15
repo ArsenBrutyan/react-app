@@ -1,4 +1,3 @@
-import { Preloader } from 'components/common/Preloader';
 import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -12,7 +11,7 @@ import { IPosts } from '@/store/types';
 import { addPost, removePost } from '@/store/actions';
 import { postsSelector, themeModeSelector } from '@/store/selectors';
 
-export const HomeContent: React.FC = () => {
+const HomeContent: React.FC = () => {
     const posts = useSelector(postsSelector);
     const isDarkMode = useSelector(themeModeSelector);
     const dispatch = useDispatch();
@@ -42,9 +41,6 @@ export const HomeContent: React.FC = () => {
         [dispatch],
     );
 
-    if (!posts) {
-        return <Preloader />;
-    }
     return (
         <StyledHomeContainer $isDarkMode={isDarkMode}>
             <StyledFormContainer>
@@ -95,3 +91,5 @@ export const HomeContent: React.FC = () => {
         </StyledHomeContainer>
     );
 };
+
+export default HomeContent;

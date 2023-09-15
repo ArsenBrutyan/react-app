@@ -1,3 +1,4 @@
+import { MediaConfig } from 'constants/media-config';
 import styled from 'styled-components';
 
 export const StyledUserListContainer = styled.div<{ $isDarkMode: boolean }>`
@@ -27,6 +28,12 @@ export const StyledTable = styled.table`
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
+    }
+
+    @media (min-width: ${MediaConfig.mobileLandscapeMax}) {
+        td th {
+            padding: 0;
+        }
     }
 `;
 

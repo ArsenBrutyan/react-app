@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     StyledSwitchContainer,
-    StyledSwitchLabel,
     StyledSwitchInput,
     StyledSlider,
 } from './styled';
@@ -14,9 +13,6 @@ export const Switcher: React.FC<ISwitcher> = ({ onClick }) => {
 
     return (
         <StyledSwitchContainer onClick={onClick}>
-            <StyledSwitchLabel $isDark={isDarkMode}>
-                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-            </StyledSwitchLabel>
             <StyledSwitchInput
                 type="checkbox"
                 id="theme-toggle"

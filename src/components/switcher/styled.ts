@@ -6,11 +6,6 @@ export const StyledSwitchContainer = styled.div`
     cursor: pointer;
 `;
 
-export const StyledSwitchLabel = styled.label<{ $isDark: boolean }>`
-    margin-right: 10px;
-    color: ${({ $isDark }) => ($isDark ? '#ffffff' : '#000000')};
-`;
-
 export const StyledSwitchInput = styled.input`
     opacity: 0;
     width: 0;
