@@ -1,3 +1,4 @@
+import { MediaConfig } from 'constants/media-config';
 import styled from 'styled-components';
 
 export const StyledHomeContainer = styled.div<{ $isDarkMode: boolean }>`
@@ -32,7 +33,14 @@ export const StyledFormContainer = styled.div`
 
     form {
         display: flex;
+        flex-direction: column;
         gap: 5px;
+    }
+
+    @media (min-width: ${MediaConfig.mobileLandscapeMax}) {
+        form {
+            flex-direction: row;
+        }
     }
 `;
 

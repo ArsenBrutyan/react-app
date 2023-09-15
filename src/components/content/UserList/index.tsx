@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { themeModeSelector } from '@/store/selectors';
 
-export const UserListContent: React.FC = () => {
+const UserListContent: React.FC = () => {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const isDarkMode = useSelector(themeModeSelector);
     const [usersOnCurrentPage, setUsersCurrentPage] = useState<IStaticUsers[]>(
@@ -153,3 +153,5 @@ export const UserListContent: React.FC = () => {
         </StyledUserListContainer>
     );
 };
+
+export default UserListContent;

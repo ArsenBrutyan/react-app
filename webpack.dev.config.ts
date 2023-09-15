@@ -5,6 +5,7 @@ import {
 import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
 import path from 'path';
 import ESLintPlugin from 'eslint-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import commonConfig from './webpack.common.config';
 
@@ -30,8 +31,17 @@ const config: IConfiguration = {
         new WatchIgnorePlugin({
             paths: [path.join(__dirname, 'src/static')],
         }),
+        new BundleAnalyzerPlugin(),
     ],
     devtool: 'inline-source-map',
+    optimization: {
+        usedExports: true,
+        concatenateModules: true,
+        minimize: true,
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
     devServer: {
         watchFiles: ['src/**/*'],
         static: [path.join(__dirname, 'src/static')],

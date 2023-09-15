@@ -1,6 +1,8 @@
-import { HomeContent } from 'components/content/Home';
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
+import { Preloader } from 'components/common/Preloader';
+
+const HomeContent = lazy(async () => import('components/content/Home'));
 
 const Home: React.FC = () => {
     return (
@@ -9,7 +11,9 @@ const Home: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}>
-            <HomeContent />
+            <Suspense fallback={<Preloader />}>
+                <HomeContent />
+            </Suspense>
         </motion.div>
     );
 };
