@@ -10,6 +10,7 @@ export const StyledHomeContainer = styled.div<{ $isDarkMode: boolean }>`
 export const StyledTable = styled.table`
     width: 100%;
     border-collapse: collapse;
+    font-size: 11px;
 
     th {
         border: 1px solid #dddddd;
@@ -22,6 +23,11 @@ export const StyledTable = styled.table`
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
+    }
+
+    @media (min-width: ${MediaConfig.mobilePortraitMax}) {
+        flex-direction: row;
+        font-size: 16px;
     }
 `;
 

@@ -18,21 +18,21 @@ export const StyledTable = styled.table`
     border-collapse: collapse;
 
     th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        background-color: #f2f2f2;
+        background: #f2f2f2;
     }
 
     td {
         border: 1px solid #dddddd;
         text-align: left;
-        padding: 8px;
+        padding: 0;
+        font-size: 8px;
     }
 
-    @media (min-width: ${MediaConfig.mobileLandscapeMax}) {
-        td th {
-            padding: 0;
+    @media (min-width: ${MediaConfig.mobilePortraitMax}) {
+        th,
+        td {
+            padding: 8px;
+            font-size: 14px;
         }
     }
 `;
@@ -47,6 +47,14 @@ export const StyledInput = styled.input`
 
 export const StyledTableFooter = styled.div`
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    @media (min-width: ${MediaConfig.mobilePortraitMax}) {
+        flex-direction: row;
+    }
 `;
 
 export const StyledCell = styled.th`
