@@ -10,6 +10,7 @@ import Button from 'components/common/Button';
 import { IPosts } from '@/store/types';
 import { addPost, removePost } from '@/store/actions';
 import { postsSelector, themeModeSelector } from '@/store/selectors';
+// import { useIsMobile } from 'hooks/use-is-mobile';
 
 const HomeContent: React.FC = () => {
     const posts = useSelector(postsSelector);
@@ -20,6 +21,7 @@ const HomeContent: React.FC = () => {
         body: '',
         userId: 1,
     });
+    // const isMobile = useIsMobile();
 
     const handleSubmit = useCallback(
         (event: React.FormEvent<HTMLFormElement>) => {
