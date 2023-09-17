@@ -23,6 +23,10 @@ export const StyledTable = styled.table`
         text-align: left;
         padding: 8px;
     }
+
+    @media (min-width: ${MediaConfig.mobilePortraitMax}) {
+        flex-direction: row;
+    }
 `;
 
 export const StyledFormContainer = styled.div`
